@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+
+  SimpleDatabaseService:
+    image: postgres:11.2
+    container_name: SimpleDatabaseService
+    hostname: SimpleDatabaseService
+    environment:
+      - POSTGRES_DB=cloud_db
+      - POSTGRES_USER=dbo_admin
+      - POSTGRES_PASSWORD=rootroot
+    ports:
+      - 5432:5432
+    networks:
+      - SpringCloudNetwork
+
+networks:
+  SpringCloudNetwork:
